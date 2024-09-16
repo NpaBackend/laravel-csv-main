@@ -1,0 +1,69 @@
+{
+  "name": "javadle/laravel-csv",
+  "description": "A Laravel livewire CSV Importer, to handle importing millions of rows without a hustle.",
+  "keywords": [
+    "JavaDLE",
+    "laravel",
+    "laravel-csv",
+    "Livewire"
+  ],
+  "homepage": "https://github.com/JavaDLE/laravel-csv",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Husein JavaDle",
+      "email": "huseynjavadle@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "illuminate/contracts": "^v11.23.5",
+    "league/csv": "^9.16.0",
+    "livewire/livewire": "^v3.5.2",
+    "spatie/laravel-package-tools": "^1.16.2"
+  },
+  "require-dev": {
+    "laravel/pint": "^v1.17.2",
+    "nunomaduro/collision": "^v8.4.0",
+    "nunomaduro/larastan": "^v2.9.3",
+    "orchestra/testbench": "^v9.1.2",
+    "pestphp/pest-plugin-laravel": "^v3.0.0",
+    "pestphp/pest-plugin-livewire": "^v3.0.0",
+    "phpstan/extension-installer": "1.4.2",
+    "phpstan/phpstan-deprecation-rules": "^1.2.1"
+  },
+  "autoload": {
+    "files": [
+      "src/helpers.php"
+    ],
+    "psr-4": {
+      "JavaDLE\\LaravelCsv\\": "src"
+    }
+  },
+  "scripts": {
+    "analyse": "vendor/bin/phpstan analyse",
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest --coverage",
+    "format": "vendor/bin/pint"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "phpstan/extension-installer": true,
+      "pestphp/pest-plugin": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "JavaDLE\\LaravelCsv\\LaravelCsvServiceProvider"
+      ],
+      "aliases": {
+        "LaravelCsv": "JavaDLE\\LaravelCsv\\Facades\\LaravelCsv"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
