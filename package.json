@@ -1,6 +1,6 @@
 {
-  "name": "laravel-csv",
-  "author": "Oussama Sid",
+  "name": "ticarx-csv",
+  "author": "Husein JavaDLE",
   "License": "MIT",
   "scripts": {
     "dev": "npm run development",
