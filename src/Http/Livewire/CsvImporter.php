@@ -77,7 +77,7 @@ class CsvImporter extends Component
 
         $this->resetExcept($this->exceptions);
 
-        $this->emitTo('handle-imports', 'imports.refresh');
+        $this->dispatch('handle-imports', 'imports.refresh');
     }
 
     public function toggle()
