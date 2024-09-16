@@ -1,8 +1,8 @@
 <?php
 
-namespace JavaDLE\LaravelCsv\Concerns;
+namespace Npa\LaravelCsv\Concerns;
 
-use JavaDLE\LaravelCsv\Models\Import;
+use Npa\LaravelCsv\Models\Import;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait HasCsvImports

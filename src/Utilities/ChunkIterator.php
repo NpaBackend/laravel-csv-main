@@ -1,6 +1,6 @@
 <?php
 
-namespace JavaDLE\LaravelCsv\Utilities;
+namespace Npa\LaravelCsv\Utilities;
 
 use Generator;
 use Iterator;

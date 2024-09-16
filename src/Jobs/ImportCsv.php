@@ -1,8 +1,8 @@
 <?php
 
-namespace JavaDLE\LaravelCsv\Jobs;
+namespace Npa\LaravelCsv\Jobs;
 
-use JavaDLE\LaravelCsv\Models\Import;
+use Npa\LaravelCsv\Models\Import;
 use Illuminate\Bus\Batchable;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

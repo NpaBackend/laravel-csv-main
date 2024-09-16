@@ -1,6 +1,6 @@
 <?php
 
-namespace JavaDLE\LaravelCsv\Scopes;
+namespace Npa\LaravelCsv\Scopes;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User;

@@ -1,18 +1,18 @@
 {
-  "name": "javadle/laravel-csv",
+  "name": "npa/laravel-csv",
   "description": "A Laravel livewire CSV Importer, to handle importing millions of rows without a hustle.",
   "keywords": [
-    "JavaDLE",
+    "Npa",
     "laravel",
     "laravel-csv",
     "Livewire"
   ],
-  "homepage": "https://github.com/JavaDLE/laravel-csv",
+  "homepage": "https://github.com/Npa/laravel-csv",
   "license": "MIT",
   "authors": [
     {
-      "name": "Husein JavaDle",
-      "email": "huseynjavadle@gmail.com",
+      "name": "Husein Npa",
+      "email": "huseynNpa@gmail.com",
       "role": "Developer"
     }
   ],
@@ -38,7 +38,7 @@
       "src/helpers.php"
     ],
     "psr-4": {
-      "JavaDLE\\LaravelCsv\\": "src"
+      "Npa\\LaravelCsv\\": "src"
     }
   },
   "scripts": {
@@ -57,10 +57,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "JavaDLE\\LaravelCsv\\LaravelCsvServiceProvider"
+        "Npa\\LaravelCsv\\LaravelCsvServiceProvider"
       ],
       "aliases": {
-        "LaravelCsv": "JavaDLE\\LaravelCsv\\Facades\\LaravelCsv"
+        "LaravelCsv": "Npa\\LaravelCsv\\Facades\\LaravelCsv"
       }
     }
   },

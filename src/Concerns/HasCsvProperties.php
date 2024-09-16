@@ -1,6 +1,6 @@
 <?php
 
-namespace JavaDLE\LaravelCsv\Concerns;
+namespace Npa\LaravelCsv\Concerns;
 
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\MessageBag;
@@ -9,7 +9,7 @@ use League\Csv\Statement;
 use League\Csv\TabularDataReader;
 
 /**
- * JavaDLE\LaravelCsv\Concerns\HasCsvProperties
+ * Npa\LaravelCsv\Concerns\HasCsvProperties
  *
  * @property Reader $readCsv
  * @property \League\Csv\TabularDataReader $csvRecords

@@ -1,9 +1,9 @@
 <?php
 
-namespace JavaDLE\LaravelCsv\Http\Livewire;
+namespace Npa\LaravelCsv\Http\Livewire;
 
-use function JavaDLE\LaravelCsv\csv_view_path;
-use JavaDLE\LaravelCsv\Models\Import;
+use function Npa\LaravelCsv\csv_view_path;
+use Npa\LaravelCsv\Models\Import;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;

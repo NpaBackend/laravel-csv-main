@@ -1,6 +1,6 @@
 <?php
 
-namespace JavaDLE\LaravelCsv\Concerns;
+namespace Npa\LaravelCsv\Concerns;
 
 use League\Csv\Reader;
 

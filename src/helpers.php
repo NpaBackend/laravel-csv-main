@@ -1,8 +1,8 @@
 <?php
 
-namespace JavaDLE\LaravelCsv;
+namespace Npa\LaravelCsv;
 
-if (! function_exists('JavaDLE\LaravelCsv\csv_view_path')) {
+if (! function_exists('Npa\LaravelCsv\csv_view_path')) {
     /**
      * Get the evaluated view content from the livewire view
      */

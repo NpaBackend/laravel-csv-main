@@ -1,6 +1,6 @@
 <?php
 
-namespace JavaDLE\LaravelCsv;
+namespace Npa\LaravelCsv;
 
 class LaravelCsvDirectives
 {

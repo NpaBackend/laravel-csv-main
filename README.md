@@ -3,10 +3,10 @@
     <br><br>
 </p>
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/JavaDLE/laravel-csv.svg?style=flat-square)](https://packagist.org/packages/JavaDLE/laravel-csv)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/JavaDLEx/laravel-csv/run-tests.yml?branch=main&label=tests)](https://github.com/JavaDLEx/laravel-csv/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/JavaDLEx/laravel-csv/phpstan.yml?branch=main&label=code%20style)](https://github.com/JavaDLEx/laravel-csv/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/JavaDLE/laravel-csv.svg?style=flat-square)](https://packagist.org/packages/JavaDLE/laravel-csv)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/Npa/laravel-csv.svg?style=flat-square)](https://packagist.org/packages/Npa/laravel-csv)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/Npax/laravel-csv/run-tests.yml?branch=main&label=tests)](https://github.com/Npax/laravel-csv/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/Npax/laravel-csv/phpstan.yml?branch=main&label=code%20style)](https://github.com/Npax/laravel-csv/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/Npa/laravel-csv.svg?style=flat-square)](https://packagist.org/packages/Npa/laravel-csv)
 
 
 - [Introduction](#introduction)
@@ -34,7 +34,7 @@ __Laravel CSV__ Package is a package created on top of Laravel [livewire](https:
 You can install the package via composer:
 
 ```bash
-composer require JavaDLE/laravel-csv
+composer require Npa/laravel-csv
 ```
 
 ## Configuration

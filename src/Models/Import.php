@@ -1,12 +1,12 @@
 <?php
 
-namespace JavaDLE\LaravelCsv\Models;
+namespace Npa\LaravelCsv\Models;
 
-use JavaDLE\LaravelCsv\Scopes;
+use Npa\LaravelCsv\Scopes;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * JavaDLE\LaravelCsv\Models\Import
+ * Npa\LaravelCsv\Models\Import
  *
  * @property int $id
  * @property int|null $user_id

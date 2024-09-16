@@ -1,9 +1,9 @@
 <?php
 
-namespace JavaDLE\LaravelCsv;
+namespace Npa\LaravelCsv;
 
-use JavaDLE\LaravelCsv\Http\Livewire\CsvImporter;
-use JavaDLE\LaravelCsv\Http\Livewire\HandleImports;
+use Npa\LaravelCsv\Http\Livewire\CsvImporter;
+use Npa\LaravelCsv\Http\Livewire\HandleImports;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\View\Compilers\BladeCompiler;
 use Livewire\Livewire;

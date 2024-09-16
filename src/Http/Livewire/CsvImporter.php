@@ -1,12 +1,12 @@
 <?php
 
-namespace JavaDLE\LaravelCsv\Http\Livewire;
+namespace Npa\LaravelCsv\Http\Livewire;
 
-use JavaDLE\LaravelCsv\Concerns;
-use function JavaDLE\LaravelCsv\csv_view_path;
-use JavaDLE\LaravelCsv\Facades\LaravelCsv;
-use JavaDLE\LaravelCsv\Jobs\ImportCsv;
-use JavaDLE\LaravelCsv\Utilities\ChunkIterator;
+use Npa\LaravelCsv\Concerns;
+use function Npa\LaravelCsv\csv_view_path;
+use Npa\LaravelCsv\Facades\LaravelCsv;
+use Npa\LaravelCsv\Jobs\ImportCsv;
+use Npa\LaravelCsv\Utilities\ChunkIterator;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\MessageBag;
 use Illuminate\Validation\Validator;
@@ -149,7 +149,7 @@ class CsvImporter extends Component
     protected function createNewImport()
     {
         /**
-         * @var \JavaDLE\LaravelCsv\Tests\Models\User */
+         * @var \Npa\LaravelCsv\Tests\Models\User */
         $user = auth()->user();
 
         return $user->imports()->create([

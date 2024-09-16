@@ -1,6 +1,6 @@
 <?php
 
-namespace JavaDLE\LaravelCsv\Facades;
+namespace Npa\LaravelCsv\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
