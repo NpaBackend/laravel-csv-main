@@ -66,7 +66,7 @@ class CsvImporter extends Component
 
         $this->resetExcept($this->exceptions);
 
-        $this->emit('handle-imports', 'imports.refresh');
+        $this->emit('imports.refresh');  // Updated to use emit for local event handling
     }
 
     public function toggle(): void
