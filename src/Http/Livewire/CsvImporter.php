@@ -19,48 +19,37 @@ class CsvImporter extends Component
     use Concerns\InteractsWithColumns;
     use Concerns\HasCsvProperties;
 
-    /** @var string */
-    public $model;
-
+    public string $model = '';
     public bool $open = false;
-
-    /** @var object */
-    public $file;
-
+    public ?object $file = null;
     public array $columnsToMap = [];
-
     public array $requiredColumns = [];
-
     public array $columnLabels = [];
-
     public array $fileHeaders = [];
-
     public int $fileRowCount = 0;
 
-    /** @var array */
-    protected $exceptions = [
+    protected array $exceptions = [
         'model', 'columnsToMap', 'open',
         'columnLabels', 'requiredColumns',
     ];
 
-    /** @var array */
-    protected $listeners = [
+    protected array $listeners = [
         'toggle',
     ];
 
-    public function mount()
+    public function mount(): void
     {
-        // map and coverts the columnsToMap property into an associative array
+        // Map and convert the columnsToMap property into an associative array
         $this->columnsToMap = $this->mapThroughColumns();
 
-        // map and coverts the requiredColumns property int key => value array
+        // Map and convert the requiredColumns property into a key-value array
         $this->columnLabels = $this->mapThroughColumnLabels();
 
-        // map and coverts the requiredColumns property int key => required value
+        // Map and convert the requiredColumns property into a key-value array of required values
         $this->requiredColumns = $this->mapThroughRequiredColumns();
     }
 
-    public function updatedFile()
+    public function updatedFile($file): void
     {
         $this->validateOnly('file');
 
@@ -69,7 +58,7 @@ class CsvImporter extends Component
         $this->resetValidation();
     }
 
-    public function import()
+    public function import(): void
     {
         $this->validate();
 
@@ -77,12 +66,12 @@ class CsvImporter extends Component
 
         $this->resetExcept($this->exceptions);
 
-        $this->dispatch('handle-imports', 'imports.refresh');
+        $this->emit('handle-imports', 'imports.refresh');
     }
 
-    public function toggle()
+    public function toggle(): void
     {
-        $this->open = ! $this->open;
+        $this->open = !$this->open;
     }
 
     public function render()
@@ -94,62 +83,60 @@ class CsvImporter extends Component
         ]);
     }
 
-    protected function validationAttributes()
+    protected function validationAttributes(): array
     {
         return $this->columnLabels;
     }
 
-    protected function rules()
+    protected function rules(): array
     {
         return [
-            'file' => 'required|file|mimes:csv,txt|max:'.config('laravel_csv.file_upload_size', '20000'),
-        ] + $this->requiredColumns;
+                'file' => 'required|file|mimes:csv,txt|max:' . config('laravel_csv.file_upload_size', '20000'),
+            ] + $this->requiredColumns;
     }
 
-    protected function setCsvProperties()
+    protected function setCsvProperties(): void
     {
-        if (! $this->handleCsvProperties() instanceof MessageBag) {
-            return [
-                $this->fileHeaders,
-                $this->fileRowCount
-            ] = $this->handleCsvProperties();
+        $csvProperties = $this->handleCsvProperties();
+
+        if (! $csvProperties instanceof MessageBag) {
+            [$this->fileHeaders, $this->fileRowCount] = $csvProperties;
+            return;
         }
 
-        $this->withValidator(function (Validator $validator) {
-            $validator->after(function ($validator) {
-                $validator->errors()->merge(
-                    $this->handleCsvProperties()->getMessages()
-                );
+        $this->withValidator(function (Validator $validator) use ($csvProperties) {
+            $validator->after(function ($validator) use ($csvProperties) {
+                $validator->errors()->merge($csvProperties->getMessages());
             });
         })->validate();
     }
 
-    protected function importCsv()
+    protected function importCsv(): void
     {
         $import = $this->createNewImport();
         $chunks = (new ChunkIterator($this->csvRecords->getIterator(), 10))->get();
 
         $jobs = collect($chunks)
-                    ->map(
-                        fn ($chunk) => new ImportCsv(
-                            $import,
-                            $this->model,
-                            $chunk,
-                            $this->columnsToMap
-                        )
-                    );
+            ->map(
+                fn ($chunk) => new ImportCsv(
+                    $import,
+                    $this->model,
+                    $chunk,
+                    $this->columnsToMap
+                )
+            );
 
         Bus::batch($jobs)
-                    ->name('import-csv')
-                    ->finally(
-                        fn () => $import->touch('completed_at')
-                    )->dispatch();
+            ->name('import-csv')
+            ->finally(
+                fn () => $import->touch('completed_at')
+            )
+            ->dispatch();
     }
 
     protected function createNewImport()
     {
-        /**
-         * @var \Npa\LaravelCsv\Tests\Models\User */
+        /** @var \Npa\LaravelCsv\Tests\Models\User */
         $user = auth()->user();
 
         return $user->imports()->create([
